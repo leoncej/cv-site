@@ -1,0 +1,455 @@
+// palette
+$lightblack: #191919;
+$darkgrey: #1D1F20;
+$turquoise: #40E0D0;
+$grey: #5A5A5A;
+$offwhite: #DCDCDC;
+
+// fonts
+$roboto: 'Roboto', sans-serif;
+$vietnam: 'Be Vietnam Pro', sans-serif;
+$gemunu: 'Gemunu Libre', sans-serif;
+
+// viewport breakpoints
+$xxs: 370px; // small phones
+$xs: 576px; // phones
+$sm: 768px; // tablets
+$md: 992px; // small laptops
+$lg: 1200px; // laptops and desktops
+$xl: 1400px; // larger monitors
+
+// global styles
+body {
+  background-color: $lightblack;
+}
+
+* {
+  font-family: $roboto;
+}
+
+.font-vietnam {
+  font-family: $vietnam;
+}
+
+.font-gemunu {
+  font-family: $gemunu;
+}
+
+h1,h2,h3,h4,h5,h6,.bold {
+  font-weight: 600;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D3D3D3;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A9A9A9;
+}
+
+button {
+  height: 4em;
+  border: none;
+  text-decoration: none;
+  padding: 1em 0;
+  margin: 0;
+  background: $darkgrey;
+  color: #FFF;
+}
+
+button:focus {
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+hr {
+  border-top: 4px dotted $grey;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.fa {
+  color: #FFF;
+}
+
+.fa:hover {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.text-white {
+  color: #FFF;
+}
+
+.text-turquoise {
+  color: $turquoise;
+}
+
+.text-offwhite {
+  color: $offwhite;
+}
+
+.p-size {
+  font-size: 12px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.letter-spacing {
+  letter-spacing: 1px;
+}
+
+.xs-skill-breakpoint {
+  display: none;
+  @media screen and (max-width: $xs) {
+    display: inline-block;
+  }
+}
+
+.sm-skill-breakpoint {
+  display: none;
+  @media screen and (max-width: $sm) {
+    display: inline-block;
+  }
+}
+
+.standard-skill-breakpoint {
+  @media screen and (max-width: $sm) {
+    display: none;
+  }
+}
+
+// page loader
+.loader-container {
+  position: fixed;
+  top: 38%;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: 99999;
+}
+
+.loader {
+  transform-origin: bottom center;
+  animation: rotate 6s linear infinite;
+}
+
+.loader-text {
+  position: fixed;
+  top: 50%;
+  min-width: 100%;
+}
+
+.circle {
+  display: inline-block;
+  background-color: $turquoise;
+  height: 30px;
+  width: 30px;
+  margin: -5px;
+  transform: scale(0.25);
+  animation: grow 3s linear infinite;
+}
+
+.circle:nth-child(2) {
+  margin-bottom: 10vh;
+  background-color: $grey;
+  animation-delay: 0.75s;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes grow {
+  50% {
+    transform: scale(1);
+  }
+}
+
+// background
+.wrapper {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(#000 0%, $lightblack 100%);
+  opacity: 0;
+  display: none;
+  transition: opacity 1s ease-in;
+}
+
+.box div {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background-color: transparent;
+  border: 3px solid #B3B3B3;
+}
+
+.box div:nth-child(1) {
+  top: 12%;
+  left: 42%;
+  animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(2) {
+  top: 70%;
+  left: 50%;
+  animation: animate 7s linear infinite;
+}
+
+.box div:nth-child(3) {
+  top: 17%;
+  left: 6%;
+  animation: animate 9s linear infinite;
+}
+
+.box div:nth-child(4) {
+  top: 20%;
+  left: 60%;
+  animation: animate 10s linear infinite;
+}
+
+.box div:nth-child(5) {
+  top: 67%;
+  left: 10%;
+  animation: animate 6s linear infinite;
+}
+
+.box div:nth-child(6) {
+  top: 80%;
+  left: 70%;
+  animation: animate 12s linear infinite;
+}
+
+.box div:nth-child(7) {
+  top: 60%;
+  left: 90%;
+  animation: animate 15s linear infinite;
+}
+
+.box div:nth-child(8) {
+  top: 32%;
+  left: 25%;
+  animation: animate 16s linear infinite;
+}
+
+.box div:nth-child(9) {
+  top: 90%;
+  left: 25%;
+  border-color: $turquoise;
+  animation: animate 9s linear infinite;
+}
+
+.box div:nth-child(10) {
+  top: 20%;
+  left: 85%;
+  border-color: $turquoise;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3) translateY(-90px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+// container
+.container {
+  width: 80%;
+  margin: 3em auto;
+  background-color: $darkgrey;
+  color: #FFF;
+  @media screen and (max-width: $xs) {
+    width: 100%;
+    margin: 0;
+  }
+  @media screen and (min-width: $xs) and (max-width: $sm) {
+    width: 90%;
+  }
+  @media screen and (min-width: $sm) and (max-width: $lg) {
+    width: 70% !important;
+  }
+  @media screen and (min-width: $lg) {
+    width: 60% !important;
+  }
+}
+
+// list
+.bi {
+  margin-left: 0;
+  font-size: 15px;
+}
+
+.bi-list {
+  font-size: 20px;
+  background-color: $turquoise;
+  color: $darkgrey;
+}
+
+.list-hidden {
+  color: $turquoise;
+}
+
+.list-text-hidden {
+  padding-top: 1.6em;
+}
+
+#aboutBtn:after,#workBtn:after,#schoolBtn:after,#contactBtn:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+  -webkit-transition: width .5s ease, background-color .5s ease; /* Chrome and Safari */
+  -moz-transition: width .5s ease, background-color .5s ease; /* FireFox */
+}
+
+#aboutBtn:hover:after,#workBtn:hover:after,#schoolBtn:hover:after,#contactBtn:hover:after {
+  width: 90%;
+  background: $turquoise;
+}
+
+.list-hidden,.list-text-hidden {
+  @media screen and (max-width: $md) {
+    display: none !important;
+  }
+}
+
+.bi-person {
+  color: $turquoise;
+}
+
+.bi-cloud-download {
+  font-size: 20px;
+  color: $turquoise;
+}
+
+// profile
+.profile-card {
+  flex: 0 0 12em;
+  margin-top: -1em;
+  margin-bottom: -1em;
+  background-color: $darkgrey;
+  box-shadow: 12px 0 15px -4px rgba(0, 0, 0, 0.5), -12px 0 8px -4px rgba(0, 0, 0, 0.5);
+  transform: translateX(-80%);
+  transition: transform 0.5s;
+  z-index: 9999;
+  @media screen and (max-width: $md) {
+    display: none !important;
+  }
+}
+
+.profile-img {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.profile-text-container {
+  background: linear-gradient(transparent 0%, $darkgrey 40%);
+}
+
+.menu-bar:hover + .profile-card {
+  transform: translateX(0);
+}
+
+// content
+.about-content-container,.work-content-container,.school-content-container,.contact-content-container {
+  flex: 0 0 60%;
+  margin-left: -8em !important;
+  @media screen and (min-width: $xs) and (max-width: $md) {
+    flex: 0 0 90%;
+    margin-left: 0 !important;
+  }
+  @media screen and (min-width: $xxs) and (max-width: $xs) {
+    flex: 0 0 85%;
+    margin-left: 0 !important;
+  }
+  @media screen and (max-width: $xxs) {
+    flex: 0 0 75%;
+    margin-left: 0 !important;
+  }
+}
+
+// work experience
+.progress-bar {
+  height: 5px;
+  width: 5em;
+  background-color: $grey;
+  border-radius: 5px;
+}
+
+#progress1 {
+  height: 5px;
+  width: 75%;
+  background-color: $turquoise;
+  border-radius: 5px;
+}
+
+#progress2 {
+  height: 5px;
+  width: 80%;
+  background-color: $turquoise;
+  border-radius: 5px;
+}
+
+#progress3 {
+  height: 5px;
+  width: 60%;
+  background-color: $turquoise;
+  border-radius: 5px;
+}
+
+#progress4 {
+  height: 5px;
+  width: 50%;
+  background-color: $turquoise;
+  border-radius: 5px;
+}
+
+#progress5 {
+  height: 5px;
+  width: 40%;
+  background-color: $turquoise;
+  border-radius: 5px;
+}
+
+#progress6 {
+  height: 5px;
+  width: 20%;
+  background-color: $turquoise;
+  border-radius: 5px;
+}
+
+// contact
+.download-link:hover {
+  text-decoration: none;
+  color: $turquoise;
+}
+
+// npm run sass
