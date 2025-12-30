@@ -1,503 +1,765 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- title -->
-    <title>Jake Leonce | Software Developer</title>
-    <meta name="description" content="Online CV for Jake Leonce; a software/front end developer with 3 years industry experience.">
-    <meta name="robots" content="index, follow" />
-    <!-- tab icon -->
-    <link rel="icon" href="img/ld_cropped.ico">
-    <!-- bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- main.css -->
-    <link rel="stylesheet" href="css/main.css" crossorigin="anonymous" />
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@900&family=Roboto:wght@300&family=Gemunu+Libre:wght@300&display=swap" rel="stylesheet">
-    <!-- bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <!-- font awesome icons -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
-    <!-- social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous" async></script>
-  </head>
-  <body>
-    <div class="loader-container">
-      <h1 class="loader-text font-vietnam text-center text-white">jl<span class="text-turquoise">.</span></h1>
-      <div class="loader d-flex flex-column justify-content-center align-items-center">
-        <div class="circle rounded-circle"></div>
-        <div class="circle rounded-circle"></div>
-      </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reece Hamilton - Game Developer</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+          background-color: #1e1e1e;
+          color: #d4d4d4;
+          line-height: 1.4;
+          font-size: 14px;
+          overflow-x: hidden;
+          /* Allow the body to handle the main scroll */
+          overflow-y: scroll;
+      }
+
+      .container {
+          /* FIX: Revert to grid layout for flowing content */
+          display: grid;
+          /* Default layout for smaller screens */
+          grid-template-columns: 240px 1fr;
+          max-width: 1400px; /* This will be overridden in the 900px media query */
+          margin: 0 auto; /* This will be overridden in the 900px media query */
+      }
+
+      /* Left Sidebar */
+      .sidebar {
+          background-color: #252526;
+          padding: 30px 20px;
+          border-right: 1px solid #3e3e42;
+
+          /* FIX: Remove fixed/sticky positioning so it scrolls with the content */
+          position: static;
+          height: auto;
+          overflow-y: visible;
+      }
+
+      .profile-section {
+          margin-bottom: 40px;
+      }
+
+      .profile-img-wrapper {
+          position: relative;
+          margin-bottom: 10px;
+      }
+
+      .img-tag {
+          color: #808080;
+          font-size: 12px;
+          margin-bottom: 5px;
+      }
+
+      .profile-img {
+          width: 100%;
+          height: auto;
+          border: 2px solid #3e3e42;
+          display: block;
+      }
+
+      .section {
+          margin-bottom: 35px;
+          position: relative;
+      }
+
+      .section .brace-container {
+          position: relative;
+      }
+
+      .section .brace-line {
+          position: absolute;
+          left: 2px;
+          top: 20px;
+          bottom: 20px;
+          width: 1px;
+          background-color: #3e3e42;
+      }
+
+      .section-title {
+          color: #4ec9b0;
+          font-size: 15px;
+          margin-bottom: 12px;
+          font-weight: bold;
+      }
+
+      .enum-keyword {
+          color: #569cd6;
+          font-size: 12px;
+      }
+
+      .brace {
+          color: #d4d4d4;
+          margin-left: 0;
+      }
+
+      .list-item {
+          color: #d4d4d4;
+          padding-left: 20px;
+          margin: 4px 0;
+          font-size: 13px;
+      }
+
+      .comment {
+          color: #6a9955;
+          font-style: italic;
+          font-size: 11px;
+          padding-left: 20px;
+          margin-top: 2px;
+      }
+
+      /* Main Content */
+      .main-content {
+          padding: 30px 40px;
+          /* FIX: Remove fixed height and overflow so content flows and causes body scroll */
+          overflow-y: visible;
+          height: auto;
+          margin-left: 0;
+      }
+
+      .code-comment {
+          color: #6a9955;
+          margin-bottom: 2px;
+          line-height: 1.3;
+      }
+
+      .class-declaration {
+          margin-bottom: 25px;
+          margin-top: 50px;
+          position: relative;
+      }
+
+      .class-body {
+          position: relative;
+      }
+
+      .class-brace-line {
+          position: absolute;
+          left: 2px;
+          top: 0;
+          bottom: 0;
+          width: 1px;
+          background-color: #3e3e42;
+      }
+
+      .keyword {
+          color: #569cd6;
+      }
+
+      .class-name {
+          color: #4ec9b0;
+          font-weight: bold;
+          font-size: 18px;
+      }
+
+      .property {
+          margin-left: 20px;
+          margin-bottom: 4px;
+      }
+
+      .property-name {
+          color: #9cdcfe;
+      }
+
+      .string {
+          color: #ce9178;
+      }
+
+      .number {
+          color: #b5cea8;
+      }
+
+      .boolean {
+          color: #569cd6;
+      }
+
+      .array-bracket {
+          color: #d4d4d4;
+      }
+
+      .method {
+          margin-left: 20px;
+          margin-bottom: 6px;
+          position: relative;
+      }
+
+      .method-body {
+          position: relative;
+      }
+
+      .method-brace-line {
+          position: absolute;
+          left: 2px;
+          top: 0;
+          bottom: 0;
+          width: 1px;
+          background-color: #3e3e42;
+      }
+
+      .method-name {
+          color: #dcdcaa;
+      }
+
+      .type {
+          color: #4ec9b0;
+      }
+
+      .variable {
+          color: #9cdcfe;
+      }
+
+      .new-keyword {
+          color: #569cd6;
+      }
+
+      .property-access {
+          color: #9cdcfe;
+      }
+
+      .multiline-comment {
+          color: #6a9955;
+          font-style: italic;
+          font-size: 12px;
+          margin: 10px 0 10px 20px;
+          line-height: 1.5;
+      }
+
+      .footer {
+        height: 100px;
+        padding-top: 80px;
+        text-align: center;
+        font-size: 12px;
+        color: #808080;
+      }
+
+      /* Download CV Button Styling (Fixed, next to minimap) */
+      .download-button {
+          position: fixed;
+          top: 20px;
+          right: 170px; /* 150px minimap width + 20px gap */
+          background-color: #252526;
+          color: #d4d4d4;
+          padding: 8px 12px;
+          text-decoration: none;
+          font-size: 14px;
+          font-weight: bold;
+          border: 1px solid #4ec9b0;
+          border-radius: 3px;
+          z-index: 20;
+          transition: background-color 0.2s, color 0.2s;
+          display: none;
+      }
+
+      .download-button:hover {
+          background-color: #4ec9b0;
+          color: #1e1e1e;
+      }
+
+      /* Right Minimap Sidebar (Fixed) */
+      .minimap-sidebar {
+          background-color: #1e1e1e;
+          padding: 20px 0;
+          border-left: 1px solid #3e3e42;
+          position: fixed;
+          right: 0;
+          top: 0;
+          height: 100vh;
+          width: 150px;
+          display: none;
+          z-index: 10;
+      }
+
+      .minimap-window {
+          width: 130px;
+          height: calc(100vh - 40px);
+          margin: 0 auto;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #3e3e42;
+          background-color: #252526;
+      }
+
+      .minimap-content {
+          transform-origin: top left;
+          transform: scale(0.18);
+          pointer-events: none;
+          background-color: transparent !important;
+          padding: 0 !important;
+          margin-left: 0 !important;
+      }
+
+      .minimap-highlight {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background-color: rgba(78, 201, 176, 0.3);
+          border: 1px solid #4ec9b0;
+          box-sizing: border-box;
+          pointer-events: none;
+          transition: transform 0.1s linear, height 0.1s linear;
+      }
+
+      /* Responsive Design Update */
+      @media (min-width: 900px) {
+          /* Show minimap sidebar and button on viewports 900px and wider */
+          .minimap-sidebar, .download-button {
+              display: block;
+          }
+
+          .container {
+              display: grid;
+              /* Left Sidebar (240px) | Main Content (Takes the remaining space) */
+              grid-template-columns: 240px 1fr;
+
+              /* FIX 1: Remove centering and width limits to allow full width scaling */
+              max-width: none;
+              margin: 0;
+          }
+
+          /* FIX 2: Constrain the main content for readability and prevent it from touching the minimap */
+          .main-content {
+              /* Base padding is 30px top/bottom, 40px left/right.
+                 We now override the right padding to ensure it clears the 150px fixed minimap. */
+              padding-right: 170px;
+
+              /* Optional: Set a generous max-width for readability on large screens */
+              max-width: 1200px;
+          }
+      }
+
+      @media (max-width: 900px) {
+        /* On smaller screens, the container remains a two-column grid (240px 1fr) and centered */
+        .container {
+            grid-template-columns: 240px 1fr;
+            max-width: 1400px;
+        }
+
+        .main-content {
+            /* Revert padding on smaller screens */
+            padding-right: 40px;
+            max-width: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+          .container {
+              grid-template-columns: 1fr;
+          }
+
+          .sidebar {
+              border-right: none;
+              border-bottom: 1px solid #3e3e42;
+          }
+
+          .main-content {
+              padding: 20px;
+              padding-right: 20px; /* Ensure mobile padding is also clean */
+          }
+
+          body {
+              font-size: 12px;
+          }
+      }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="img-tag">&lt;img&gt;</div>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%23333' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-size='16' font-family='Arial'%3EProfile Photo%3C/text%3E%3C/svg%3E" alt="Profile" class="profile-img">
+                <div class="img-tag">&lt;/img&gt;</div>
+            </div>
+            <div class="section">
+                <div class="enum-keyword">public enum</div>
+                <div class="section-title">PLATFORMS()</div>
+                <div class="brace">{</div>
+                <div class="brace-container">
+                    <div class="brace-line"></div>
+                    <div class="list-item">Linux,</div>
+                    <div class="list-item">MacOS,</div>
+                    <div class="list-item">Windows</div>
+                    <div class="list-item">Mobile</div>
+                </div>
+                <div class="brace">}</div>
+            </div>
+
+            <div class="section">
+                <div class="enum-keyword">public enum</div>
+                <div class="section-title">LANGUAGES()</div>
+                <div class="brace">{</div>
+                <div class="brace-container">
+                    <div class="brace-line"></div>
+                    <div class="list-item">C#,C++,Python,</div>
+                    <div class="list-item">Java,Bash,HTML5</div>
+                    <div class="list-item">SCSS,JavaScript</div>
+                </div>
+                <div class="brace">}</div>
+            </div>
+
+            <div class="section">
+                <div class="enum-keyword">public enum</div>
+                <div class="section-title">SOFTWARE()</div>
+                <div class="brace">{</div>
+                <div class="brace-container">
+                    <div class="brace-line"></div>
+                    <div class="list-item">Unity3D,</div>
+                    <div class="list-item">UnrealEngine,</div>
+                    <div class="list-item">GodotU,VisualStudio,</div>
+                    <div class="list-item">Jetbrains,PhotoShop,</div>
+                    <div class="list-item">GoogleSuite,Blender,</div>
+                    <div class="list-item">AdobePremier,</div>
+                    <div class="list-item">AdobeSubstancePainter,</div>
+                    <div class="list-item">AdobeSubstance3D</div>
+                </div>
+                <div class="brace">}</div>
+            </div>
+
+            <div class="section">
+                <div class="enum-keyword">public enum</div>
+                <div class="section-title">MEDIA()</div>
+                <div class="brace">{</div>
+                <div class="brace-container">
+                    <div class="brace-line"></div>
+                    <div class="list-item">LinkedIn,</div>
+                    <div class="comment">//in/Reece-Hamilton</div>
+                    <div class="list-item">GitHub,</div>
+                    <div class="comment">//github.com/ReeceHamilton</div>
+                    <div class="list-item">Stack Overflow</div>
+                    <div class="comment">//stackoverflow.com/users/<br>reecehamilton</div>
+                </div>
+                <div class="brace">}</div>
+            </div>
+
+            <div class="section">
+                <div class="enum-keyword">public enum</div>
+                <div class="section-title">PROFILE()</div>
+                <div class="brace">{</div>
+                <div class="brace-container">
+                    <div class="brace-line"></div>
+                    <div class="list-item">AMBITIOUS,</div>
+                    <div class="list-item">METHODICAL,</div>
+                    <div class="list-item">PRECISE,</div>
+                    <div class="list-item">PUNCTUAL,</div>
+                    <div class="list-item">ENTHUSIASTIC,</div>
+                    <div class="list-item">DETERMINED</div>
+                </div>
+                <div class="brace">}</div>
+            </div>
+
+            <div class="section">
+                <div class="enum-keyword">public enum</div>
+                <div class="section-title">REFERENCES()</div>
+                <div class="brace">{</div>
+                <div class="brace-container">
+                    <div class="brace-line"></div>
+                    <div class="list-item">Senior Software Engineer, Acme</div>
+                    <div class="comment">//+44(0)7594410123</div>
+                    <div class="list-item">Mentor, Epic Games</div>
+                    <div class="comment">//+44(0)7594410123</div>
+                </div>
+                <div class="brace">}</div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="code-comment">/// &lt;summary&gt;</div>
+            <div class="code-comment">/// Specialise in game programming in C++ using Unity3D</div>
+            <div class="code-comment">/// or Unreal Engine. Have a Masters Degree in Game Programming</div>
+            <div class="code-comment">/// and 2 years industry experience. Available IMMEDIATELY.</div>
+            <div class="code-comment">/// &lt;\summary&gt;</div>
+
+            <div class="class-declaration">
+                <div><span class="keyword">public class</span> <span class="class-name">INFORMATION</span></div>
+                <div class="brace">{</div>
+                <div class="class-body">
+                    <div class="class-brace-line"></div>
+                    <div class="property">
+                        <span class="keyword">public string</span> <span class="property-name">NAME</span> = <span class="string">"Reece Hamilton"</span>;
+                    </div>
+                    <div class="property">
+                        <span class="keyword">public int</span> <span class="property-name">AGE</span> = <span class="number">26</span>;
+                    </div>
+                    <div class="property">
+                        <span class="keyword">public string</span> <span class="property-name">ROLE</span> = <span class="string">"Game Developer"</span>;
+                    </div>
+                    <div class="property">
+                        <span class="keyword">public string</span> <span class="property-name">EMAIL</span> = <span class="string">"reece.hamilton@gmail.com"</span>;
+                    </div>
+                    <div class="property">
+                        <span class="keyword">public int</span> <span class="property-name">MOBILE</span> = <span class="number">07594410123</span>;
+                    </div>
+                    <div class="property">
+                        <span class="keyword">public string[]</span> <span class="property-name">LOCATION</span> = <span class="array-bracket">{</span><span class="string">"1 Madeup Street"</span>, <span class="string">"Cambourne"</span>, <span class="string">"Cambridgeshire"</span>, <span class="string">"CB23 1AB"</span><span class="array-bracket">}</span>;
+                    </div>
+                    <div class="property">
+                        <span class="keyword">public bool</span> <span class="property-name">DRIVERS_LICENSE</span> = <span class="boolean">true</span>;
+                    </div>
+                </div>
+                <div class="brace">}</div>
+            </div>
+
+            <div class="class-declaration">
+                <div><span class="keyword">public static class</span> <span class="class-name">EXPERIENCE</span></div>
+                <div class="brace">{</div>
+                <div class="class-body">
+                    <div class="class-brace-line"></div>
+                    <div class="method">
+                        <span class="keyword">public void</span> <span class="method-name">AcmeGameStudios</span>()
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">{</div>
+                    <div class="method-body" style="margin-left: 20px;">
+                        <div class="method-brace-line"></div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Duration</span> = <span class="type">Range</span>(start: <span class="type">January 2024</span>, end: <span class="type">NULL</span>);
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Link</span> = <span class="new-keyword">new</span> <span class="type">URL</span>(<span class="string">"https://www.asterigos.com/en"</span>);
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Role</span> = <span class="new-keyword">new</span> <span class="type">JuniorGameDeveloper</span>;
+                        </div>
+                        <div class="multiline-comment">
+                            /*Worked within a small development team to build and maintain a<br>
+                            real-time strategy game for PC, contributing to core gameplay systems,<br>
+                            bug fixes, and feature updates. Developed and implemented core gameplay<br>
+                            mechanics and features using Unity and C#, ensuring alignment with the<br>
+                            game design documents. Collaborated with artists and designers to integrate<br>
+                            visual assets, animations, and sound effects, enhancing overall player<br>
+                            immersion.*/
+                        </div>
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">}</div>
+
+                    <div class="method" style="margin-top: 15px;">
+                        <span class="keyword">public void</span> <span class="method-name">EpicGames</span>()
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">{</div>
+                    <div class="method-body" style="margin-left: 20px;">
+                        <div class="method-brace-line"></div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Duration</span> = <span class="type">Range</span>(start: <span class="type">August 2023</span>, end: <span class="type">December 2023</span>);
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Link</span> = <span class="new-keyword">new</span> <span class="type">URL</span>(<span class="string">"https://store.epicgames.com/"</span>);
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Type</span> = <span class="new-keyword">new</span> <span class="type">Internship</span>;
+                        </div>
+                        <div class="multiline-comment">
+                            /*Identified, logged, and resolved over 100 bugs and technical issues<br>
+                            in the game code, working closely with the QA team to improve stability<br>
+                            and user experience. Participated in regular team meetings (sprint<br>
+                            planning, daily stand-ups) within an Agile development methodology,<br>
+                            contributing to project roadmapping and efficient workflow. Utilized Git<br>
+                            for version control, source code management, and collaborative development<br>
+                            workflows, participating in routine code review sessions.*/
+                        </div>
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">}</div>
+
+                    <div class="method" style="margin-top: 15px;">
+                        <span class="keyword">public void</span> <span class="method-name">PersonalProject</span>()
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">{</div>
+                    <div class="method-body" style="margin-left: 20px;">
+                        <div class="method-brace-line"></div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Type</span> = <span class="new-keyword">new</span> <span class="type">Project</span>;
+                        </div>
+                        <div class="multiline-comment">
+                            /*Developing a 2D, physics-based platformer game using<br>
+                            industry-standard tools and programming languages to deepen expertise<br>
+                            in game engine architecture and low-level programming. This project<br>
+                            involves self-managing the entire development lifecycle, from initial<br>
+                            game design documentation and art asset creation to implementing<br>
+                            complex features such as dynamic lighting, custom character movement<br>
+                            controllers, and robust save-game systems. Currently in alpha testing,<br>
+                            this project has served as a practical sandbox for mastering performance<br>
+                            optimization techniques and advanced programming concepts outside of<br>
+                            commercial constraints.*/
+                        </div>
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">}</div>
+                </div>
+                <div class="brace">}</div>
+            </div>
+
+            <div class="class-declaration">
+                <div><span class="keyword">public partial class</span> <span class="class-name">EDUCATION</span> : <span class="type">Higher Education Institutions</span></div>
+                <div class="brace">{</div>
+                <div class="class-body">
+                    <div class="class-brace-line"></div>
+                    <div class="method">
+                        <span class="keyword">private void</span> <span class="method-name">AngliaRuskinUniversity</span>()
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">{</div>
+                    <div class="method-body" style="margin-left: 20px;">
+                        <div class="method-brace-line"></div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Qualification</span> = <span class="type">Master's</span>; <span class="code-comment">// For a duration of 2 years</span>
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Date</span> = <span class="new-keyword">new</span> <span class="type">Range</span>(start: <span class="type">September 2021</span>, end: <span class="type">June 2023</span>);
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Type</span> = <span class="type">Game</span>.<span class="property-access">Programmer</span>();
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Modules</span> = <span class="array-bracket">{</span><span class="string">"OOP and Graphics (2D and 3D)"</span>, <span class="string">"Data Structures"</span>, <span class="string">"Advanced Rendering"</span><span class="array-bracket">}</span>;
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Obtained</span> = <span class="string">"July 2023"</span>;
+                        </div>
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">}</div>
+
+                    <div class="method" style="margin-top: 15px;">
+                        <span class="keyword">private void</span> <span class="method-name">AngliaRuskinUniversity</span>(<span class="keyword">string[]</span> <span class="variable">_Diplomas</span>)
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">{</div>
+                    <div class="method-body" style="margin-left: 20px;">
+                        <div class="method-brace-line"></div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Qualification</span> = <span class="type">Bachelor of Science</span>; <span class="code-comment">// For a duration of 3 years</span>
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Date</span> = <span class="new-keyword">new</span> <span class="type">Range</span>(start: <span class="type">September 2018</span>, end: <span class="type">June 2021</span>);
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Type</span> = <span class="type">Game</span>.<span class="property-access">Design</span>();
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Diplomas</span> = <span class="array-bracket">{</span><span class="string">"Digital Design Engineer"</span>, <span class="string">"Games Design - Level 3"</span><span class="array-bracket">}</span>;
+                        </div>
+                        <div class="property" style="margin-left: 20px;">
+                            <span class="keyword">var</span> <span class="variable">_Obtained</span> = <span class="string">"July 2021"</span>;
+                        </div>
+                    </div>
+                    <div class="brace" style="margin-left: 20px;">}</div>
+                </div>
+                <div class="brace">}</div>
+            </div>
+
+            <div class="footer">
+              Powered by Online CV Pro
+            </div>
+        </main>
+
+        <a href="#" class="download-button">Download CV</a>
+
+        <aside class="minimap-sidebar">
+          <div class="minimap-window"></div>
+        </aside>
     </div>
-    <div class="wrapper">
-      <div class="box">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div class="container card p-0">
-        <div class="d-flex">
-          <div class="d-flex flex-column justify-content-between menu-bar">
-            <div class="d-flex flex-column">
-              <div class="d-flex">
-                <i class="bi bi-list pointer p-3"></i>
-                <i class="bi bi-list list-hidden pointer p-3"></i>
-                <i class="bi bi-list list-hidden pointer p-3"></i>
-                <i class="bi bi-list list-hidden pointer p-3"></i>
-              </div>
-              <button onclick="aboutFunction()" class="mb-3" id="aboutBtn">
-                <div class="d-flex">
-                  <i class="bi bi-person pointer p-3 my-0" id="aboutIcon"></i>
-                  <p class="p-size font-gemunu letter-spacing list-text-hidden pointer pl-2">
-                    ABOUT ME
-                  </p>
-                </div>
-              </button>
-              <button onclick="workFunction()" class="mb-3" id="workBtn">
-                <div class="d-flex">
-                  <i class="bi bi-briefcase pointer p-3 my-0" id="workIcon"></i>
-                  <p class="p-size font-gemunu letter-spacing list-text-hidden pointer pl-2">
-                    WORK EXPERIENCE
-                  </p>
-                </div>
-              </button>
-              <button onclick="schoolFunction()" class="mb-3" id="schoolBtn">
-                <div class="d-flex">
-                  <i class="bi bi-book pointer p-3 my-0" id="schoolIcon"></i>
-                  <p class="p-size font-gemunu letter-spacing list-text-hidden pointer pl-2">
-                    MY EDUCATION
-                  </p>
-                </div>
-              </button>
-              <button onclick="contactFunction()" class="mb-3" id="contactBtn">
-                <div class="d-flex">
-                  <i class="bi bi-telephone pointer p-3 my-0" id="contactIcon"></i>
-                  <p class="p-size font-gemunu letter-spacing list-text-hidden pointer pl-2">
-                    CONTACT ME
-                  </p>
-                </div>
-              </button>
-            </div>
-            <div class="d-flex">
-              <a href="common/cv.docx" class="p-3" download>
-                <i class="bi bi-cloud-download pointer"></i>
-              </a>
-              <p class="p-size font-gemunu letter-spacing list-text-hidden pointer text-turquoise pl-1">
-                Download CV
-              </p>
-            </div>
-          </div>
-          <div class="card d-flex flex-column justify-content-end profile-card shadow-lg">
-            <div class="profile-card-text">
-              <img src="img/profile.png" alt="Profile image of Jake Leonce" class="profile-img"/>
-              <div class="profile-text-container py-5">
-                <h4 class="text-center bold font-vietnam m-2">Jake Leonce</h4>
-                <p class="text-center p-size bold text-turquoise m-2">
-                  Software Developer
-                </p>
-                <div class="d-flex justify-content-center">
-                  <a href="https://www.instagram.com/jakeashleyleonce/?hl=en" target="_blank" class="fa fa-instagram p-2"></a>
-                  <a href="https://uk.linkedin.com/in/jakeleonce" target="_blank" class="fa fa-linkedin p-2"></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="about-content-container p-3 m-2" id="aboutSection">
-            <h2 class="font-vietnam">about me<span class="text-turquoise">.</span></h2>
-            <p class="p-size bold text-turquoise">
-              26 years old <span class="text-white px-2">/</span> Cambridgeshire <span class="text-white px-2">/</span> 3 years experience
-            </p>
-            <p class="p-size text-offwhite">
-              Hello World. Since graduating from University I have discovered a passion for web development through combining a lifelong trait
-              of mine with one of my biggest interests; creativity and technology. This has since resulted in me thoroughly enjoying my time spent
-              building on my knowledge and developing websites, both as side projects as well as for work. I am always up for learning new things
-              and testing my capabilities.
-            </p>
-            <hr class="my-4"/>
-            <h5 class="font-vietnam">my interests</h5>
-            <div class="interests-container p-0 m-0">
-              <div class="row">
-                <div class="col">
-                  <i class="fas fa-futbol text-turquoise"></i>
-                  <p class="p-size font-vietnam bold">
-                    football
-                  </p>
-                  <p class="p-size text-offwhite">
-                    I have always been a huge football fan and enjoyed playing for teams such as Peterborough United, Rushden & Diamonds as well as having trials with my boyhood club, Chelsea
-                  </p>
-                </div>
-                <div class="w-100 xs-skill-breakpoint"></div>
-                <div class="col">
-                  <i class="bi bi-keyboard text-turquoise"></i>
-                  <p class="p-size font-vietnam bold">
-                    developing
-                  </p>
-                  <p class="p-size text-offwhite">
-                    Away from work I will always have at least one developing project on-the-go. I'm obsessed with learning more and bettering my current skillset
-                  </p>
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <i class="bi bi-people text-turquoise"></i>
-                  <p class="p-size font-vietnam bold">
-                    socialising
-                  </p>
-                  <p class="p-size text-offwhite">
-                    Meeting up with friends and socialising is one hobby I enjoy most; exploring new cities, doing activities and meeting new people
-                  </p>
-                </div>
-                <div class="w-100 xs-skill-breakpoint"></div>
-                <div class="col">
-                  <i class="bi bi-brush text-turquoise"></i>
-                  <p class="p-size font-vietnam bold">
-                    drawing
-                  </p>
-                  <p class="p-size text-offwhite">
-                    I've always enjoyed being artistic and creative so in my spare time I enjoy drawing realism pictures, cartoons as well as tattoo sketches
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="work-content-container p-3 m-2 d-none" id="workSection">
-            <h2 class="font-vietnam">work experience<span class="text-turquoise">.</span></h2>
-            <div class="d-flex justify-content-between">
-              <p class="p-size text-turquoise">2019-Present</p>
-              <div class="d-flex flex-column">
-                <p class="bold font-vietnam text-right">
-                  Comtec Cable Accessories
-                  <br />
-                  <sup class="text-turquoise">Software Developer</sup>
-                </p>
-                <p class="p-size text-offwhite">
-                  At Comtec I have worked on, and been trusted with, a wide variety of projects. Day-to-day tasks involve maintenance of the companies CRM, D360, as well as implementing changes, building reports and bug fixing as per the users request. Notable projects I have played a key role in developing include: Trade Counter software that loads POD's, receives digital sign-offs storing a local copy and emailing one through to all involved, as well as developing a scanner gun WMS Android application. The former of these two projects I built using HTML, CSS and JavaScript using the Electron framework while the latter was developed in Python, using Kivy.
-                </p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p class="p-size text-turquoise">2018-2019</p>
-              <div class="d-flex flex-column">
-                <p class="bold font-vietnam text-right">
-                  TwoSigmas
-                  <br />
-                  <sup class="text-turquoise">Junior Front End Developer</sup>
-                </p>
-                <p class="p-size text-offwhite">
-                  Initially hired as a trainee developer, for the first 3 months I was provided training. This was a steep learning curve as I went into the role only with my self-taught knowledge of HTML, CSS and JavaScript. I progressed on to become a Junior Developer working on projects in both Angular and Django. With TwoSigmas being a new tech startup, I was trusted with large responsibilities at an early stage; ranging from making page layout/design decisions and implementing them, to manipulating live site databases that are used by thousands of people.
-                </p>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p class="p-size text-turquoise">2017-2018</p>
-              <div class="d-flex flex-column">
-                <p class="bold font-vietnam text-right">
-                  CTDI
-                  <br />
-                  <sup class="text-turquoise">1st Line Technical Support</sup>
-                </p>
-                <p class="p-size text-offwhite">
-                  At CTDI I was a 1st line support technician for LG. Whilst improving my knowledge of the hardware side of technology; particularly with monitors and connections, I enjoyed being presented with new challenges and overcoming them everyday with our customers. The job involved identifying and troubleshooting issues reported with any LG Home Entertainment or Mobile products.
-                </p>
-              </div>
-            </div>
-            <hr class="my-4"/>
-            <h5 class="font-vietnam">my skills</h5>
-            <div class="skills-container p-0 m-0">
-              <div class="row text-offwhite">
-                <div class="col">
-                  <div class="progress-bar">
-                    <div id="progress1">
-                    </div>
-                  </div>
-                  <div class="d-flex my-1">
-                    <i class="fa fa-html5"></i>
-                    <p class="p-size pl-2">
-                      HTML
-                    </p>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="progress-bar">
-                    <div id="progress2">
-                    </div>
-                  </div>
-                  <div class="d-flex my-1">
-                    <i class="fa fa-css3"></i>
-                    <p class="p-size pl-2">
-                      CSS
-                    </p>
-                  </div>
-                </div>
-                <div class="w-100 sm-skill-breakpoint"></div>
-                <div class="col">
-                  <div class="progress-bar">
-                    <div id="progress3">
-                    </div>
-                  </div>
-                  <div class="d-flex my-1">
-                    <i class="fab fa-php"></i>
-                    <p class="p-size pl-2">
-                      PHP
-                    </p>
-                  </div>
-                </div>
-                <div class="w-100 standard-skill-breakpoint"></div>
-                <div class="col">
-                  <div class="progress-bar">
-                    <div id="progress4">
-                    </div>
-                  </div>
-                  <div class="d-flex my-1">
-                    <i class="fab fa-python"></i>
-                    <p class="p-size pl-2">
-                      Python
-                    </p>
-                  </div>
-                </div>
-                <div class="w-100 sm-skill-breakpoint"></div>
-                <div class="col">
-                  <div class="progress-bar">
-                    <div id="progress5">
-                    </div>
-                  </div>
-                  <div class="d-flex my-1">
-                    <i class="fab fa-js"></i>
-                    <p class="p-size pl-2">
-                      JavaScript
-                    </p>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="progress-bar">
-                    <div id="progress6">
-                    </div>
-                  </div>
-                  <div class="d-flex my-1">
-                    <i class="fab fa-angular"></i>
-                    <p class="p-size pl-2">
-                      Angular
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="school-content-container p-3 m-2 d-none" id="schoolSection">
-            <h2 class="font-vietnam">my education<span class="text-turquoise">.</span></h2>
-            <div class="d-flex">
-              <i class="fa fa-graduation-cap text-turquoise pt-1"></i>
-              <div>
-                <p class="font-vietnam p-0 m-0 pl-2">
-                  Computer Science BSc (Hons) Degree
-                </p>
-                <sup class="text-turquoise pl-2">University of Lincoln</sup>
-              </div>
-            </div>
-            <p class="p-size font-gemunu letter-spacing text-right pb-0 mb-0">
-              NOTABLE MODULES
-            </p>
-            <ul class="p-size text-offwhite text-right">
-              <li>
-                Software Development
-              </li>
-              <li>
-                Software Engineering
-              </li>
-              <li>
-                Object Orientated Programming
-              </li>
-              <li>
-                Autonomous Mobile Robotics
-              </li>
-              <li>
-                Human-Computer Interaction
-              </li>
-              <li>
-                Database Systems
-              </li>
-              <li>
-                Parallel Computing
-              </li>
-              <li>
-                Image Processing
-              </li>
-              <li>
-                Networking and Network Systems
-              </li>
-            </ul>
-            <div class="d-flex">
-              <i class="fa fa-university text-turquoise pt-1"></i>
-              <div>
-                <p class="font-vietnam p-0 m-0 pl-2">
-                  A Levels
-                </p>
-                <sup class="text-turquoise pl-2">St Peter's School</sup>
-              </div>
-            </div>
-            <ul class="p-size text-offwhite text-right">
-              <li>
-                IT - <span class="font-gemunu text-white bold mr-1">A</span>
-              </li>
-              <li>
-                Business Studies - <span class="font-gemunu text-white bold mr-1">C</span>
-              </li>
-              <li>
-                Sports Studies - <span class="font-gemunu text-white bold mr-1">C</span>
-              </li>
-              <li>
-                COPE - <span class="font-gemunu text-white bold">A*</span>
-              </li>
-            </ul>
-            <div class="d-flex">
-              <i class="fa fa-book text-turquoise pt-1"></i>
-              <div>
-                <p class="font-vietnam p-0 m-0 pl-2">
-                  GCSE's - Secondary School
-                </p>
-                <sup class="text-turquoise pl-2">St Peter's School</sup>
-              </div>
-            </div>
-            <p class="p-size text-offwhite ml-4">
-              I achieved <span class="font-gemunu text-white bold">9 A*-C’s</span> including Maths, English and Science in my GCSE's. My non-compulsory subjects picked were IT, Geography, German & Sports Studies.
-            </p>
-            <hr class="my-4"/>
-            <h5 class="font-vietnam">other qualifications</h5>
-            <div class="d-flex">
-              <i class="fa fa-certificate text-turquoise pt-1"></i>
-              <div>
-                <p class="p-0 m-0 pl-2">
-                  Object Oriented PHP & MVC
-                </p>
-                <sup class="text-turquoise pl-2">Udemy</sup>
-              </div>
-            </div>
-            <div class="d-flex">
-              <i class="fa fa-certificate text-turquoise pt-1"></i>
-              <div>
-                <p class="p-0 m-0 pl-2">
-                  Kanban Fundamentals
-                </p>
-                <sup class="text-turquoise pl-2">Udemy</sup>
-              </div>
-            </div>
-          </div>
-          <div class="contact-content-container p-3 m-2 d-none" id="contactSection">
-            <h2 class="font-vietnam">get in touch<span class="text-turquoise">.</span></h2>
-            <p class="p-size bold text-turquoise">
-              26 years old <span class="text-white px-2">/</span> Cambridgeshire <span class="text-white px-2">/</span> 3 years experience
-            </p>
-            <p class="p-size text-offwhite">
-              Thank you for taking the time to look over this brief introduction to myself.
-              I have experience in freelance work including developing websites for weddings as well as CV sites, much like this one.
-              So should you have any queries, please don't hesitate to reach out to me and get in touch through one of the following links.
-            </p>
-            <h5 class="font-vietnam">email</h5>
-            <div class="d-flex">
-              <i class="bi bi-envelope"></i>
-              <p class="p-size text-turquoise pl-3">
-                jakeleonce@outlook.com
-              </p>
-            </div>
-            <h5 class="font-vietnam pt-3">my socials</h5>
-            <a href="https://www.instagram.com/jakeashleyleonce/?hl=en" target="_blank" class="d-flex">
-              <i class="fa fa-instagram"></i>
-              <p class="p-size text-turquoise pl-3">
-                @jakeashleyleonce
-              </p>
-            </a>
-            <a href="https://uk.linkedin.com/in/jakeleonce" target="_blank" class="d-flex">
-              <i class="fa fa-linkedin"></i>
-              <p class="p-size text-turquoise pl-3">
-                @Jake Leonce
-              </p>
-            </a>
-            <hr />
-            <p class="p-size text-offwhite pb-5">Feel free to download a copy of my CV <a href="common/cv.docx" class="text-turquoise download-link" download>here</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-  <script>
-    const loader = document.querySelector(".loader-container");
-    const wrapper = document.querySelector(".wrapper");
 
-    function init() {
-      setTimeout(() => {
-        loader.style.display = "none";
-        loader.style.opacity = 0;
-        wrapper.style.display = "block";
-        setTimeout(() => (wrapper.style.opacity = 1), 50);
-      }, 5000);
-    }
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get references
+            const mainContent = document.querySelector('.main-content');
+            const minimapWindow = document.querySelector('.minimap-window');
+            const SCALE_FACTOR = 0.18;
 
-    init();
+            if (!minimapWindow || !mainContent) return;
 
-    function aboutFunction() {
-      var element = document.getElementById("aboutSection");
-      element.classList.remove("d-none");
-      document.getElementById("workSection").classList.add("d-none");
-      document.getElementById("schoolSection").classList.add("d-none");
-      document.getElementById("contactSection").classList.add("d-none");
-      // icons
-      document.getElementById("aboutIcon").classList.remove("text-white");
-      document.getElementById("aboutIcon").classList.add("text-turquoise");
-      document.getElementById("workIcon").classList.add("text-white");
-      document.getElementById("schoolIcon").classList.add("text-white");
-      document.getElementById("contactIcon").classList.add("text-white");
-    }
-    function workFunction() {
-      var element = document.getElementById("workSection");
-      element.classList.remove("d-none");
-      document.getElementById("aboutSection").classList.add("d-none");
-      document.getElementById("schoolSection").classList.add("d-none");
-      document.getElementById("contactSection").classList.add("d-none");
-      // icons
-      document.getElementById("workIcon").classList.remove("text-white");
-      document.getElementById("workIcon").classList.add("text-turquoise");
-      document.getElementById("aboutIcon").classList.add("text-white");
-      document.getElementById("schoolIcon").classList.add("text-white");
-      document.getElementById("contactIcon").classList.add("text-white");
-    }
-    function schoolFunction() {
-      var element = document.getElementById("schoolSection");
-      element.classList.remove("d-none");
-      document.getElementById("aboutSection").classList.add("d-none");
-      document.getElementById("workSection").classList.add("d-none");
-      document.getElementById("contactSection").classList.add("d-none");
-      // icons
-      document.getElementById("schoolIcon").classList.remove("text-white");
-      document.getElementById("schoolIcon").classList.add("text-turquoise");
-      document.getElementById("aboutIcon").classList.add("text-white");
-      document.getElementById("workIcon").classList.add("text-white");
-      document.getElementById("contactIcon").classList.add("text-white");
-    }
-    function contactFunction() {
-      var element = document.getElementById("contactSection");
-      element.classList.remove("d-none");
-      document.getElementById("aboutSection").classList.add("d-none");
-      document.getElementById("workSection").classList.add("d-none");
-      document.getElementById("schoolSection").classList.add("d-none");
-      // icons
-      document.getElementById("contactIcon").classList.remove("text-white");
-      document.getElementById("contactIcon").classList.add("text-turquoise");
-      document.getElementById("aboutIcon").classList.add("text-white");
-      document.getElementById("workIcon").classList.add("text-white");
-      document.getElementById("schoolIcon").classList.add("text-white");
-    }
-  </script>
+            // 1. Initial Measurement of Main Content's Full Height
+            const tempDiv = document.createElement('div');
+            tempDiv.style.visibility = 'hidden';
+            tempDiv.style.position = 'absolute';
+            // Use clientWidth for accurate width calculation
+            tempDiv.style.width = mainContent.clientWidth + 'px';
+            tempDiv.innerHTML = mainContent.innerHTML;
+            document.body.appendChild(tempDiv);
+
+            const fullContentHeight = tempDiv.scrollHeight;
+            document.body.removeChild(tempDiv);
+
+            // 2. Clone and Prepare Content
+            const clonedContent = mainContent.cloneNode(true);
+            clonedContent.classList.add('minimap-content');
+            clonedContent.classList.remove('main-content');
+
+            // Set the *unscaled* height and width of the cloned content
+            clonedContent.style.height = fullContentHeight + 'px';
+            clonedContent.style.width = mainContent.clientWidth + 'px';
+
+            // Clean up cloned content
+            const minimapClone = clonedContent.querySelector('.minimap-sidebar');
+            if (minimapClone) minimapClone.remove();
+            const footerClone = clonedContent.querySelector('.footer');
+            if (footerClone) footerClone.remove();
+            // Remove the download button from the clone
+            const downloadButtonClone = clonedContent.querySelector('.download-button');
+            if (downloadButtonClone) downloadButtonClone.remove();
+
+            minimapWindow.appendChild(clonedContent);
+
+            // 3. Create the highlight element
+            const highlightBox = document.createElement('div');
+            highlightBox.classList.add('minimap-highlight');
+            minimapWindow.appendChild(highlightBox);
+
+            // 4. Update minimap highlight on scroll
+            function updateMinimapHighlight() {
+                // FIX: Use window/document dimensions for global page scroll
+                const pageScrollTop = window.scrollY || document.documentElement.scrollTop;
+                const viewportHeight = window.innerHeight;
+
+                // Use document.documentElement for total scrollable size
+                const totalPageHeight = document.documentElement.scrollHeight;
+
+                // Minimap dimensions
+                const minimapHeight = minimapWindow.clientHeight;
+
+                // --- A. Highlight Height and Position ---
+
+                // Ratio of visible height to total scrollable height
+                const visibleProportion = viewportHeight / totalPageHeight;
+                let highlightHeight = minimapHeight * visibleProportion;
+
+                // Total scrollable distance for the whole page
+                const totalScrollDistance = totalPageHeight - viewportHeight;
+
+                // Total distance the highlight box can move in the minimap
+                const totalHighlightMoveDistance = minimapHeight - highlightHeight;
+
+                // Calculate the scroll ratio
+                const scrollRatio = totalScrollDistance > 0
+                    ? pageScrollTop / totalScrollDistance
+                    : 0;
+
+                // Calculate the top position of the highlight box
+                let highlightTop = totalHighlightMoveDistance * scrollRatio;
+
+                // Apply styles to the highlight box
+                highlightBox.style.height = highlightHeight + 'px';
+                highlightBox.style.transform = `translateY(${highlightTop}px)`;
+
+                // --- B. Scroll Minimap Content ---
+
+                // Total distance the minimap content needs to shift is the scaled page scroll top
+                const minimapShiftTop = pageScrollTop * SCALE_FACTOR;
+
+                // Apply the necessary negative margin (shift) to the cloned content
+                clonedContent.style.marginTop = `-${minimapShiftTop}px`;
+            }
+
+            // Initial call and attach event listeners
+            setTimeout(updateMinimapHighlight, 100);
+
+            // FIX: Listen for scroll events on the window (main page scroll)
+            window.addEventListener('scroll', updateMinimapHighlight);
+            window.addEventListener('resize', updateMinimapHighlight);
+        });
+    </script>
+</body>
 </html>
